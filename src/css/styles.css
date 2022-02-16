@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 🤖 Fonts */
+
+@font-face {
+  font-family: 'Gilroy-Bold';
+  src: url("../../assets/fonts/Gilroy-Bold.ttf");
+}
+
+@font-face {
+  font-family: 'Geometria-Medium';
+  src: url("../../assets/fonts/Geometria-Medium.ttf");
+}
+
+
+
+h1 {
+    font-family: 'Gilroy-Bold';
+}
+
+img {
+    width: 45vw;
+}
