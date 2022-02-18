@@ -1,0 +1,51 @@
+@import '_mixins.scss';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 🤖Import Fonts */
+
+@font-face {
+  font-family: 'Gilroy-Bold';
+  src: url("../../assets/fonts/Gilroy-Bold.ttf");
+}
+
+@font-face {
+  font-family: 'Geometria-Medium';
+  src: url("../../assets/fonts/Geometria-Medium.ttf");
+}
+
+@font-face {
+  font-family: 'Geometria-Bold';
+  src: url("../../assets/fonts/Geometria-Bold.ttf");
+}
+
+/* 👀Variables */
+
+$clr-white:#FFFFFF;
+$clr-yellow:#DBBE20;
+$clr-red-btn: #DF1F2D;
+$clr-red-grad: #AA2E2E;
+$clr-blue-grad: #26087D;
+$clr-darkblue-grad: #0F003C;
+$ff-gilroy: 'Gilroy-Bold', sans-serif;
+$ff-geometria-medium: 'Geometria-Medium', sans-serif;
+$ff-geometria-bold: 'Geometria-Bold', sans-serif;
+
+
+/* 🥑General rules */
+
+h1, h2 {
+    font-family: $ff-gilroy;
+}
+
+p {
+  font-family: $ff-geometria-medium;
+}
+
+/* 🐱‍🏍Hero */
+

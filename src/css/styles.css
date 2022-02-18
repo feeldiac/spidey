@@ -1,27 +1,31 @@
+@charset "UTF-8";
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* 🤖 Fonts */
-
+/* 🤖Import Fonts */
 @font-face {
-  font-family: 'Gilroy-Bold';
+  font-family: "Gilroy-Bold";
   src: url("../../assets/fonts/Gilroy-Bold.ttf");
 }
-
 @font-face {
-  font-family: 'Geometria-Medium';
+  font-family: "Geometria-Medium";
   src: url("../../assets/fonts/Geometria-Medium.ttf");
 }
-
-
-
-h1 {
-    font-family: 'Gilroy-Bold';
+@font-face {
+  font-family: "Geometria-Bold";
+  src: url("../../assets/fonts/Geometria-Bold.ttf");
+}
+/* 👀Variables */
+/* 🥑General rules */
+h1, h2 {
+  font-family: "Gilroy-Bold", sans-serif;
 }
 
-img {
-    width: 45vw;
+p {
+  font-family: "Geometria-Medium", sans-serif;
 }
+
+/* 🐱‍🏍Hero *//*# sourceMappingURL=styles.css.map */

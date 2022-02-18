@@ -11,7 +11,7 @@
     "url": "git+https://github.com/feeldiac/spidey.git"
   },
   "author": "feeldiac",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/feeldiac/spidey/issues"
   },
