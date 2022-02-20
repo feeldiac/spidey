@@ -6,6 +6,9 @@
     padding: 0;
 }
 
+html {
+    font-size: 10px;
+}
 
 /* 🤖Import Fonts */
 
@@ -24,6 +27,11 @@
   src: url("../../assets/fonts/Geometria-Bold.ttf");
 }
 
+@font-face {
+  font-family: 'Geometria';
+  src: url("../../assets/fonts/Geometria.ttf");
+}
+
 /* 👀Variables */
 
 $clr-white:#FFFFFF;
@@ -33,11 +41,16 @@ $clr-red-grad: #AA2E2E;
 $clr-blue-grad: #26087D;
 $clr-darkblue-grad: #0F003C;
 $ff-gilroy: 'Gilroy-Bold', sans-serif;
+$ff-geometria: 'Geometria', sans-serif;
 $ff-geometria-medium: 'Geometria-Medium', sans-serif;
 $ff-geometria-bold: 'Geometria-Bold', sans-serif;
 
 
 /* 🥑General rules */
+
+a {
+  text-decoration: none;
+}
 
 h1, h2 {
     font-family: $ff-gilroy;
@@ -47,5 +60,76 @@ p {
   font-family: $ff-geometria-medium;
 }
 
+
+.container {
+  padding: 5%;
+}
+
 /* 🐱‍🏍Hero */
 
+.hero {
+  background-image: url("../../assets/img/hero-mobile-dark.svg"), url("../../assets/img/marvel-logo.svg"), linear-gradient($clr-red-grad, $clr-blue-grad);
+  @include flex-vertical-center;
+  $height: 926px;
+  height: $height;
+
+  background-position-y: 111%, 87%, top;
+  background-position-x: center, 64%, center;
+  background-repeat: no-repeat;
+  background-size: 135%, 125%, contain;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 2.4rem;
+    margin-top: $height/5.8;
+  }
+}
+
+.hero__title {
+  h1 {
+    color: $clr-white;
+    font-size: 3.2rem;
+    line-height: 1.2;
+
+    span {
+      color: $clr-yellow;
+      font-size: 4.8rem;
+    }
+  }
+}
+
+.hero__text {
+  margin-bottom: 1.6rem;
+
+  p {
+    color: white;
+    font-family: 'Geometria';
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+}
+
+.hero__cta {
+  @include flex-center;
+  gap: 1rem;
+
+  .btn {
+    border-radius: 1.5rem;
+    background-color: $clr-red-btn;
+    height: 4.5rem;
+    width: 11.6rem;
+    cursor: pointer;
+
+    @include flex-center;
+    a {
+      color: $clr-white;
+      text-transform: uppercase;
+      font-family: $ff-geometria-bold;
+      font-size: 1.4rem;
+      letter-spacing: .25rem;
+    }
+  }
+}

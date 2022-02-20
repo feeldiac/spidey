@@ -5,6 +5,10 @@
   padding: 0;
 }
 
+html {
+  font-size: 10px;
+}
+
 /* 🤖Import Fonts */
 @font-face {
   font-family: "Gilroy-Bold";
@@ -18,8 +22,16 @@
   font-family: "Geometria-Bold";
   src: url("../../assets/fonts/Geometria-Bold.ttf");
 }
+@font-face {
+  font-family: "Geometria";
+  src: url("../../assets/fonts/Geometria.ttf");
+}
 /* 👀Variables */
 /* 🥑General rules */
+a {
+  text-decoration: none;
+}
+
 h1, h2 {
   font-family: "Gilroy-Bold", sans-serif;
 }
@@ -28,4 +40,70 @@ p {
   font-family: "Geometria-Medium", sans-serif;
 }
 
-/* 🐱‍🏍Hero *//*# sourceMappingURL=styles.css.map */
+.container {
+  padding: 5%;
+}
+
+/* 🐱‍🏍Hero */
+.hero {
+  background-image: url("../../assets/img/hero-mobile-dark.svg"), url("../../assets/img/marvel-logo.svg"), linear-gradient(#AA2E2E, #26087D);
+  display: flex;
+  justify-content: center;
+  height: 926px;
+  background-position-y: 111%, 87%, top;
+  background-position-x: center, 64%, center;
+  background-repeat: no-repeat;
+  background-size: 135%, 125%, contain;
+}
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 2.4rem;
+  margin-top: 159.6551724138px;
+}
+
+.hero__title h1 {
+  color: #FFFFFF;
+  font-size: 3.2rem;
+  line-height: 1.2;
+}
+.hero__title h1 span {
+  color: #DBBE20;
+  font-size: 4.8rem;
+}
+
+.hero__text {
+  margin-bottom: 1.6rem;
+}
+.hero__text p {
+  color: white;
+  font-family: "Geometria";
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.hero__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.hero__cta .btn {
+  border-radius: 1.5rem;
+  background-color: #DF1F2D;
+  height: 4.5rem;
+  width: 11.6rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero__cta .btn a {
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-family: "Geometria-Bold", sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.25rem;
+}/*# sourceMappingURL=styles.css.map */
