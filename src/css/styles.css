@@ -28,6 +28,10 @@ html {
 }
 /* 👀Variables */
 /* 🥑General rules */
+body {
+  overflow-x: hidden;
+}
+
 a {
   text-decoration: none;
 }
@@ -36,33 +40,47 @@ h1, h2 {
   font-family: "Gilroy-Bold", sans-serif;
 }
 
-p {
-  font-family: "Geometria-Medium", sans-serif;
+section:not(.hero) {
+  margin-top: 16rem;
+}
+
+main {
+  background: url("../../assets/img/hero-mobile-dark.svg"), url("../../assets/img/marvel-logo.svg"), linear-gradient(180deg, #AA2E2E 0%, #26087D 33%, #0F003C 66%, #AA2E2E 100%);
+  background-position-y: 22%, 25%, top;
+  background-position-x: center, 64%, center;
+  background-repeat: no-repeat;
+  background-size: 135%, 125%, contain;
 }
 
 .container {
-  padding: 5%;
+  padding: 7.5%;
+}
+
+.subtitle {
+  font-size: 2.8rem;
+  line-height: 1.2;
+  color: #DBBE20;
+  margin-bottom: 2rem;
+}
+
+.description-text {
+  font-family: "Geometria", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: #FFFFFF;
 }
 
 /* 🐱‍🏍Hero */
 .hero {
-  background-image: url("../../assets/img/hero-mobile-dark.svg"), url("../../assets/img/marvel-logo.svg"), linear-gradient(#AA2E2E, #26087D);
-  display: flex;
-  justify-content: center;
   height: 926px;
-  background-position-y: 111%, 87%, top;
-  background-position-x: center, 64%, center;
-  background-repeat: no-repeat;
-  background-size: 135%, 125%, contain;
 }
 .hero__content {
   display: flex;
   flex-direction: column;
   text-align: center;
   gap: 2.4rem;
-  margin-top: 159.6551724138px;
+  margin-top: 16rem;
 }
-
 .hero__title h1 {
   color: #FFFFFF;
   font-size: 3.2rem;
@@ -72,7 +90,6 @@ p {
   color: #DBBE20;
   font-size: 4.8rem;
 }
-
 .hero__text {
   margin-bottom: 1.6rem;
 }
@@ -83,7 +100,6 @@ p {
   font-weight: 400;
   line-height: 1.5;
 }
-
 .hero__cta {
   display: flex;
   align-items: center;
@@ -93,8 +109,8 @@ p {
 .hero__cta .btn {
   border-radius: 1.5rem;
   background-color: #DF1F2D;
-  height: 4.5rem;
   width: 11.6rem;
+  height: 4.5rem;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -106,4 +122,48 @@ p {
   font-family: "Geometria-Bold", sans-serif;
   font-size: 1.4rem;
   letter-spacing: 0.25rem;
+}
+
+/* 🕷 Spiders - Section 1 */
+.spiders__results {
+  color: #FFFFFF;
+  font-family: "Gilroy-Bold", sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  margin-top: 0.8rem;
+  margin-bottom: 6.8rem;
+  text-decoration: overline;
+}
+.spiders__cards {
+  margin-block: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: auto;
+  gap: 1rem;
+}
+.spiders-card {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #FFFFFF;
+}
+.spiders-card__img {
+  width: 180px;
+  height: 180px;
+}
+.spiders-card__img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.spiders-card span {
+  color: #FFFFFF;
+  font-family: "Gilroy-Bold", sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  margin-top: 0.8rem;
 }/*# sourceMappingURL=styles.css.map */

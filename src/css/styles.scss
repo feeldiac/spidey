@@ -48,6 +48,10 @@ $ff-geometria-bold: 'Geometria-Bold', sans-serif;
 
 /* 🥑General rules */
 
+body {
+  overflow-x: hidden;
+}
+
 a {
   text-decoration: none;
 }
@@ -56,80 +60,156 @@ h1, h2 {
     font-family: $ff-gilroy;
 }
 
-p {
-  font-family: $ff-geometria-medium;
+section:not(.hero) {
+  margin-top: 16rem;
 }
 
+main {
+  background: url("../../assets/img/hero-mobile-dark.svg"), 
+  url("../../assets/img/marvel-logo.svg"), 
+  linear-gradient(180deg, $clr-red-grad 0%, 
+  $clr-blue-grad 33%, 
+  $clr-darkblue-grad 66%,
+  $clr-red-grad 100%
+  ); 
+
+  background-position-y: 22%, 25%, top;
+  background-position-x: center, 64%, center;
+  background-repeat: no-repeat;
+  background-size: 135%, 125%, contain;
+}
 
 .container {
-  padding: 5%;
+  padding: 7.5%;
+}
+
+.subtitle {
+  font-size: 2.8rem;
+  line-height: 1.2;
+  color: $clr-yellow;
+  margin-bottom: 2rem;
+}
+
+.description-text {
+  font-family: $ff-geometria;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: $clr-white;
 }
 
 /* 🐱‍🏍Hero */
 
 .hero {
-  background-image: url("../../assets/img/hero-mobile-dark.svg"), url("../../assets/img/marvel-logo.svg"), linear-gradient($clr-red-grad, $clr-blue-grad);
-  @include flex-vertical-center;
+
   $height: 926px;
   height: $height;
-
-  background-position-y: 111%, 87%, top;
-  background-position-x: center, 64%, center;
-  background-repeat: no-repeat;
-  background-size: 135%, 125%, contain;
 
   &__content {
     display: flex;
     flex-direction: column;
     text-align: center;
     gap: 2.4rem;
-    margin-top: $height/5.8;
+    margin-top: 16rem;
   }
-}
 
-.hero__title {
-  h1 {
-    color: $clr-white;
-    font-size: 3.2rem;
-    line-height: 1.2;
+  &__title {
+    h1 {
+      color: $clr-white;
+      font-size: 3.2rem;
+      line-height: 1.2;
 
     span {
-      color: $clr-yellow;
-      font-size: 4.8rem;
+        color: $clr-yellow;
+        font-size: 4.8rem;
+      }
     }
   }
-}
 
-.hero__text {
+  &__text {
   margin-bottom: 1.6rem;
 
-  p {
-    color: white;
-    font-family: 'Geometria';
-    font-size: 1.6rem;
-    font-weight: 400;
-    line-height: 1.5;
+    p {
+      color: white;
+      font-family: 'Geometria';
+      font-size: 1.6rem;
+      font-weight: 400;
+      line-height: 1.5;
+    }
   }
-}
 
-.hero__cta {
+
+  &__cta {
   @include flex-center;
   gap: 1rem;
 
-  .btn {
-    border-radius: 1.5rem;
-    background-color: $clr-red-btn;
-    height: 4.5rem;
-    width: 11.6rem;
-    cursor: pointer;
+    .btn {
+      border-radius: 1.5rem;
+      background-color: $clr-red-btn;
+      @include box(11.6rem, 4.5rem);
+      cursor: pointer;
 
-    @include flex-center;
-    a {
-      color: $clr-white;
-      text-transform: uppercase;
-      font-family: $ff-geometria-bold;
-      font-size: 1.4rem;
-      letter-spacing: .25rem;
+      @include flex-center;
+      a {
+        color: $clr-white;
+        text-transform: uppercase;
+        font-family: $ff-geometria-bold;
+        font-size: 1.4rem;
+        letter-spacing: .25rem;
+      }
     }
   }
+}
+
+
+/* 🕷 Spiders - Section 1 */
+
+.spiders {
+  &__results {
+    color: $clr-white;
+    font-family: $ff-gilroy;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    margin-top: .8rem;
+    margin-bottom: 6.8rem;
+    text-decoration: overline;
+  }
+
+  &__cards {
+    margin-block: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-rows: auto;
+    gap: 1rem;
+  }
+
+  &-card {
+    @include box(200px, 200px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid $clr-white;
+    
+
+    &__img {
+      @include box(180px, 180px);
+      // background-color: blueviolet;
+
+      img {
+        @include box(100%, 100%);
+        border-radius: 100px;
+        object-fit: cover;
+      }
+    }
+
+    span {
+      color: $clr-white;
+      font-family: $ff-gilroy;
+      font-size: 1.4rem;
+      line-height: 1.5;
+      margin-top: .8rem;
+    }
+  }
+}
+
+.comics {
 }
