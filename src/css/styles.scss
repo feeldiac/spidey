@@ -61,7 +61,7 @@ h1, h2 {
 }
 
 section:not(.hero) {
-  margin-top: 16rem;
+  margin-top: 10rem;
 }
 
 main {
@@ -175,11 +175,11 @@ main {
   }
 
   &__cards {
-    margin-block: auto;
     display: grid;
+    justify-items: center;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-auto-rows: auto;
-    gap: 1rem;
+    gap: 3.5rem;
   }
 
   &-card {
@@ -187,7 +187,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid $clr-white;
+    // border: 1px solid $clr-white;
     
 
     &__img {
