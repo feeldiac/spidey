@@ -8,6 +8,7 @@
 
 html {
     font-size: 10px;
+    scroll-behavior: smooth;
 }
 
 /* 🤖Import Fonts */
@@ -50,6 +51,18 @@ $ff-geometria-bold: 'Geometria-Bold', sans-serif;
 
 body {
   overflow-x: hidden;
+  background: url("../../assets/img/hero-mobile-dark.svg"), 
+  url("../../assets/img/marvel-logo.svg"), 
+  linear-gradient(180deg, $clr-red-grad 0%, 
+  $clr-blue-grad 33%, 
+  $clr-darkblue-grad 66%,
+  $clr-red-grad 100%
+  ); 
+
+  background-position-y: 22%, 25%, top;
+  background-position-x: center, 64%, center;
+  background-repeat: no-repeat;
+  background-size: 135%, 125%, contain;
 }
 
 a {
@@ -65,18 +78,18 @@ section:not(.hero) {
 }
 
 main {
-  background: url("../../assets/img/hero-mobile-dark.svg"), 
-  url("../../assets/img/marvel-logo.svg"), 
-  linear-gradient(180deg, $clr-red-grad 0%, 
-  $clr-blue-grad 33%, 
-  $clr-darkblue-grad 66%,
-  $clr-red-grad 100%
-  ); 
+  // background: url("../../assets/img/hero-mobile-dark.svg"), 
+  // url("../../assets/img/marvel-logo.svg"), 
+  // linear-gradient(180deg, $clr-red-grad 0%, 
+  // $clr-blue-grad 33%, 
+  // $clr-darkblue-grad 66%,
+  // $clr-red-grad 100%
+  // ); 
 
-  background-position-y: 22%, 25%, top;
-  background-position-x: center, 64%, center;
-  background-repeat: no-repeat;
-  background-size: 135%, 125%, contain;
+  // background-position-y: 22%, 25%, top;
+  // background-position-x: center, 64%, center;
+  // background-repeat: no-repeat;
+  // background-size: 135%, 125%, contain;
 }
 
 .container {
@@ -163,53 +176,97 @@ main {
 
 /* 🕷 Spiders - Section 1 */
 
+.cards {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  grid-auto-rows: auto;
+  gap: 5rem;
+}
+
+.card {
+  @include box(270px, 270px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__img {
+    @include box(255px, 255px);
+
+    img {
+      @include box(100%, 100%);
+      object-fit: cover;
+    }
+  }
+
+  span {
+      margin-block: .8rem;
+      text-align: center;
+
+      a {
+        color: $clr-white;
+        font-family: $ff-gilroy;
+        font-size: 1.4rem;
+        line-height: 1.5;
+      }
+    }
+}
+
+
+
 .spiders {
   &__results {
     color: $clr-white;
     font-family: $ff-gilroy;
     font-size: 1.4rem;
     line-height: 1.5;
+    letter-spacing: 0.5px;
     margin-top: .8rem;
     margin-bottom: 6.8rem;
     text-decoration: overline;
   }
 
-  &__cards {
-    display: grid;
-    justify-items: center;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-auto-rows: auto;
-    gap: 3.5rem;
-  }
-
   &-card {
-    @include box(200px, 200px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    // border: 1px solid $clr-white;
-    
-
-    &__img {
-      @include box(180px, 180px);
-      // background-color: blueviolet;
-
-      img {
-        @include box(100%, 100%);
-        border-radius: 100px;
-        object-fit: cover;
-      }
-    }
-
-    span {
-      color: $clr-white;
-      font-family: $ff-gilroy;
-      font-size: 1.4rem;
-      line-height: 1.5;
-      margin-top: .8rem;
+    img {
+      border-radius: 150px;
     }
   }
 }
 
 .comics {
+  &__texts {
+    margin-bottom: 6.8rem;
+  }
+
+  &-card {
+    &__img {
+      @include box(180px, 255px);
+
+      img {
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+footer {
+  margin-block: 4rem;
+
+  p {
+    margin-top: 0.8rem;
+  }
+
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+footer, footer a {
+  text-align: center;
+  color: $clr-white;
+  font-family: $ff-geometria-medium;
+  font-size: 1.25rem;
+  line-height: 1.5;
 }

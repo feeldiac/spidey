@@ -7,6 +7,7 @@
 
 html {
   font-size: 10px;
+  scroll-behavior: smooth;
 }
 
 /* 🤖Import Fonts */
@@ -30,6 +31,11 @@ html {
 /* 🥑General rules */
 body {
   overflow-x: hidden;
+  background: url("../../assets/img/hero-mobile-dark.svg"), url("../../assets/img/marvel-logo.svg"), linear-gradient(180deg, #AA2E2E 0%, #26087D 33%, #0F003C 66%, #AA2E2E 100%);
+  background-position-y: 22%, 25%, top;
+  background-position-x: center, 64%, center;
+  background-repeat: no-repeat;
+  background-size: 135%, 125%, contain;
 }
 
 a {
@@ -42,14 +48,6 @@ h1, h2 {
 
 section:not(.hero) {
   margin-top: 10rem;
-}
-
-main {
-  background: url("../../assets/img/hero-mobile-dark.svg"), url("../../assets/img/marvel-logo.svg"), linear-gradient(180deg, #AA2E2E 0%, #26087D 33%, #0F003C 66%, #AA2E2E 100%);
-  background-position-y: 22%, 25%, top;
-  background-position-x: center, 64%, center;
-  background-repeat: no-repeat;
-  background-size: 135%, 125%, contain;
 }
 
 .container {
@@ -125,44 +123,82 @@ main {
 }
 
 /* 🕷 Spiders - Section 1 */
+.cards {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  grid-auto-rows: auto;
+  gap: 5rem;
+}
+
+.card {
+  width: 270px;
+  height: 270px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card__img {
+  width: 255px;
+  height: 255px;
+}
+.card__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.card span {
+  margin-block: 0.8rem;
+  text-align: center;
+}
+.card span a {
+  color: #FFFFFF;
+  font-family: "Gilroy-Bold", sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
 .spiders__results {
   color: #FFFFFF;
   font-family: "Gilroy-Bold", sans-serif;
   font-size: 1.4rem;
   line-height: 1.5;
+  letter-spacing: 0.5px;
   margin-top: 0.8rem;
   margin-bottom: 6.8rem;
   text-decoration: overline;
 }
-.spiders__cards {
-  display: grid;
-  justify-items: center;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-auto-rows: auto;
-  gap: 3.5rem;
+.spiders-card img {
+  border-radius: 150px;
 }
-.spiders-card {
-  width: 200px;
-  height: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+.comics__texts {
+  margin-bottom: 6.8rem;
 }
-.spiders-card__img {
+.comics-card__img {
   width: 180px;
-  height: 180px;
+  height: 255px;
 }
-.spiders-card__img img {
-  width: 100%;
-  height: 100%;
-  border-radius: 100px;
-  -o-object-fit: cover;
-     object-fit: cover;
+.comics-card__img img {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
-.spiders-card span {
-  color: #FFFFFF;
-  font-family: "Gilroy-Bold", sans-serif;
-  font-size: 1.4rem;
-  line-height: 1.5;
+
+footer {
+  margin-block: 4rem;
+}
+footer p {
   margin-top: 0.8rem;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer, footer a {
+  text-align: center;
+  color: #FFFFFF;
+  font-family: "Geometria-Medium", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.5;
 }/*# sourceMappingURL=styles.css.map */
