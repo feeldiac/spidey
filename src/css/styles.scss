@@ -1,9 +1,9 @@
 @import '_mixins.scss';
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -59,10 +59,32 @@ body {
   $clr-red-grad 100%
   ); 
 
-  background-position-y: 22%, 25%, top;
+  background-position-y: 3.2%, 4%, top;
   background-position-x: center, 64%, center;
   background-repeat: no-repeat;
   background-size: 135%, 125%, contain;
+
+  @include breakpoint(tablet) {
+    background-position-y: 4.2%, 6%, top;
+    background-position-x: 40%, 64%, center;
+    background-repeat: no-repeat;
+    background-size: 100%, 115%, contain;
+  }
+
+  @include breakpoint(laptop) {
+    background: url("../../assets/img/hero-desktop-dark.svg"), 
+    url("../../assets/img/marvel-logo.svg"), 
+    linear-gradient(180deg, $clr-red-grad 0%, 
+    $clr-blue-grad 33%, 
+    $clr-darkblue-grad 66%,
+    $clr-red-grad 100%
+    );
+
+    background-position-y: 3.255%, 0.15%, top;
+    background-position-x: 90%, 99%, center;
+    background-repeat: no-repeat;
+    background-size: 50%, 52%, contain;
+  }
 }
 
 a {
@@ -74,22 +96,10 @@ h1, h2 {
 }
 
 section:not(.hero) {
-  margin-top: 10rem;
-}
-
-main {
-  // background: url("../../assets/img/hero-mobile-dark.svg"), 
-  // url("../../assets/img/marvel-logo.svg"), 
-  // linear-gradient(180deg, $clr-red-grad 0%, 
-  // $clr-blue-grad 33%, 
-  // $clr-darkblue-grad 66%,
-  // $clr-red-grad 100%
-  // ); 
-
-  // background-position-y: 22%, 25%, top;
-  // background-position-x: center, 64%, center;
-  // background-repeat: no-repeat;
-  // background-size: 135%, 125%, contain;
+  margin-bottom: 8.5rem;
+  @include breakpoint(laptop) {
+    margin-bottom: 4.5rem;
+  }
 }
 
 .container {
@@ -110,12 +120,15 @@ main {
   color: $clr-white;
 }
 
-/* 🐱‍🏍Hero */
+/* 🐱‍🏍Hero - Section 1 */
 
 .hero {
 
   $height: 926px;
   height: $height;
+  @include breakpoint(laptop){ 
+    height: 690px;
+  }
 
   &__content {
     display: flex;
@@ -123,6 +136,11 @@ main {
     text-align: center;
     gap: 2.4rem;
     margin-top: 16rem;
+    @include breakpoint(laptop) {
+      align-items: flex-start;
+      text-align: left;
+      margin-top: 12rem;
+    }
   }
 
   &__title {
@@ -130,10 +148,16 @@ main {
       color: $clr-white;
       font-size: 3.2rem;
       line-height: 1.2;
+      @include breakpoint(laptop) {
+        font-size: 4rem;
+      }
 
     span {
         color: $clr-yellow;
         font-size: 4.8rem;
+        @include breakpoint(laptop) {
+          font-size: 7.6rem;
+        }
       }
     }
   }
@@ -147,6 +171,10 @@ main {
       font-size: 1.6rem;
       font-weight: 400;
       line-height: 1.5;
+
+      @include breakpoint(laptop) {
+        font-size: 2rem;
+      }
     }
   }
 
@@ -159,9 +187,20 @@ main {
       border-radius: 1.5rem;
       background-color: $clr-red-btn;
       @include box(11.6rem, 4.5rem);
+      @include flex-center;
       cursor: pointer;
 
-      @include flex-center;
+      &:hover {
+        background-color: $clr-white;
+
+        & a {
+          background-image: linear-gradient(90deg, $clr-red-grad, $clr-blue-grad);
+          background-clip: text;
+          color: transparent;
+        }
+      }
+      transition: all 0.4s ease-in-out;
+
       a {
         color: $clr-white;
         text-transform: uppercase;
@@ -174,7 +213,6 @@ main {
 }
 
 
-/* 🕷 Spiders - Section 1 */
 
 .cards {
   display: grid;
@@ -213,6 +251,7 @@ main {
 }
 
 
+/* 🕷 Spiders - Section 2 */
 
 .spiders {
   &__results {
@@ -233,6 +272,8 @@ main {
   }
 }
 
+/* 🤩 Comics - Section 3 */
+
 .comics {
   &__texts {
     margin-bottom: 6.8rem;
@@ -248,6 +289,8 @@ main {
     }
   }
 }
+
+/* 👣 Footer */
 
 footer {
   margin-block: 4rem;

@@ -32,10 +32,27 @@ html {
 body {
   overflow-x: hidden;
   background: url("../../assets/img/hero-mobile-dark.svg"), url("../../assets/img/marvel-logo.svg"), linear-gradient(180deg, #AA2E2E 0%, #26087D 33%, #0F003C 66%, #AA2E2E 100%);
-  background-position-y: 22%, 25%, top;
+  background-position-y: 3.2%, 4%, top;
   background-position-x: center, 64%, center;
   background-repeat: no-repeat;
   background-size: 135%, 125%, contain;
+}
+@media screen and (min-width: 768px) {
+  body {
+    background-position-y: 4.2%, 6%, top;
+    background-position-x: 40%, 64%, center;
+    background-repeat: no-repeat;
+    background-size: 100%, 115%, contain;
+  }
+}
+@media screen and (min-width: 1024px) {
+  body {
+    background: url("../../assets/img/hero-desktop-dark.svg"), url("../../assets/img/marvel-logo.svg"), linear-gradient(180deg, #AA2E2E 0%, #26087D 33%, #0F003C 66%, #AA2E2E 100%);
+    background-position-y: 3.255%, 0.15%, top;
+    background-position-x: 90%, 99%, center;
+    background-repeat: no-repeat;
+    background-size: 50%, 52%, contain;
+  }
 }
 
 a {
@@ -47,7 +64,12 @@ h1, h2 {
 }
 
 section:not(.hero) {
-  margin-top: 10rem;
+  margin-bottom: 8.5rem;
+}
+@media screen and (min-width: 1024px) {
+  section:not(.hero) {
+    margin-bottom: 4.5rem;
+  }
 }
 
 .container {
@@ -68,9 +90,14 @@ section:not(.hero) {
   color: #FFFFFF;
 }
 
-/* 🐱‍🏍Hero */
+/* 🐱‍🏍Hero - Section 1 */
 .hero {
   height: 926px;
+}
+@media screen and (min-width: 1024px) {
+  .hero {
+    height: 690px;
+  }
 }
 .hero__content {
   display: flex;
@@ -79,14 +106,31 @@ section:not(.hero) {
   gap: 2.4rem;
   margin-top: 16rem;
 }
+@media screen and (min-width: 1024px) {
+  .hero__content {
+    align-items: flex-start;
+    text-align: left;
+    margin-top: 12rem;
+  }
+}
 .hero__title h1 {
   color: #FFFFFF;
   font-size: 3.2rem;
   line-height: 1.2;
 }
+@media screen and (min-width: 1024px) {
+  .hero__title h1 {
+    font-size: 4rem;
+  }
+}
 .hero__title h1 span {
   color: #DBBE20;
   font-size: 4.8rem;
+}
+@media screen and (min-width: 1024px) {
+  .hero__title h1 span {
+    font-size: 7.6rem;
+  }
 }
 .hero__text {
   margin-bottom: 1.6rem;
@@ -97,6 +141,11 @@ section:not(.hero) {
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 1.5;
+}
+@media screen and (min-width: 1024px) {
+  .hero__text p {
+    font-size: 2rem;
+  }
 }
 .hero__cta {
   display: flex;
@@ -109,10 +158,20 @@ section:not(.hero) {
   background-color: #DF1F2D;
   width: 11.6rem;
   height: 4.5rem;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+.hero__cta .btn:hover {
+  background-color: #FFFFFF;
+}
+.hero__cta .btn:hover a {
+  background-image: linear-gradient(90deg, #AA2E2E, #26087D);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
 }
 .hero__cta .btn a {
   color: #FFFFFF;
@@ -122,7 +181,6 @@ section:not(.hero) {
   letter-spacing: 0.25rem;
 }
 
-/* 🕷 Spiders - Section 1 */
 .cards {
   display: grid;
   justify-items: center;
@@ -159,6 +217,7 @@ section:not(.hero) {
   line-height: 1.5;
 }
 
+/* 🕷 Spiders - Section 2 */
 .spiders__results {
   color: #FFFFFF;
   font-family: "Gilroy-Bold", sans-serif;
@@ -173,6 +232,7 @@ section:not(.hero) {
   border-radius: 150px;
 }
 
+/* 🤩 Comics - Section 3 */
 .comics__texts {
   margin-bottom: 6.8rem;
 }
@@ -185,6 +245,7 @@ section:not(.hero) {
      object-fit: contain;
 }
 
+/* 👣 Footer */
 footer {
   margin-block: 4rem;
 }
