@@ -1,6 +1,4 @@
 import fetchData from './utils/fetchData.js';
-// 1dd16d0355176cfb236fb82b9bf1292eba2c6594346fae80605f6adf569c383e1977641f5
-// 696AE4745FE86EA2A721BB609F60A1EA
 
 const spidersAPI = 'https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=spider&limit=100&ts=1&apikey=46fae80605f6adf569c383e1977641f5&hash=696ae4745fe86ea2a721bb609f60a1ea';
 const comicsAPI = 'https://gateway.marvel.com:443/v1/public/comics?dateRange=2021-02-24%2C2022-02-24&titleStartsWith=spider&orderBy=-onsaleDate&limit=21&ts=1&apikey=46fae80605f6adf569c383e1977641f5&hash=696ae4745fe86ea2a721bb609f60a1ea';
@@ -61,3 +59,9 @@ const comicsData = async(url_api) => {
 
 spidersData(spidersAPI);
 comicsData(comicsAPI);
+
+//Loader
+
+window.addEventListener('load', function() {
+    document.getElementById('loader').classList.toggle('loader-end');
+})
